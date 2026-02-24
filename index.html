@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Mustapha Hammouda | Python Engineer & DevOps Specialist</title>
+    <meta name="description" content="Senior Python Engineer specializing in Backend Architecture, DevOps, and Application Support. 3+ years experience in critical production environments.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicons -->
+    <link href="favicon.ico" rel="icon">
+    <link href="favicon.ico" rel="apple-touch-icon">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#1e293b',
+                        accent: '#06b6d4',
+                        'accent-hover': '#0891b2',
+                        surface: '#334155',
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-strong {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bg-gradient-animated {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e1b4b);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+        
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+        }
+        
+        .skill-bar {
+            background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #06b6d4;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .grid-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+<body class="bg-primary text-gray-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold font-mono text-gradient">AMH.</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-sm font-medium hover:text-accent transition-colors">Skills</a>
+                    <a href="#experience" class="nav-link text-sm font-medium hover:text-accent transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                    <a href="#mathematics" class="nav-link text-sm font-medium hover:text-accent transition-colors">Mathematics</a>
+                    <a href="#contact" class="px-6 py-2 bg-accent text-primary font-semibold rounded-full hover:bg-accent-hover transition-all glow-hover">Let's Talk</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-strong absolute w-full mt-4">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#about" class="block text-lg font-medium hover:text-accent">About</a>
+                <a href="#skills" class="block text-lg font-medium hover:text-accent">Skills</a>
+                <a href="#experience" class="block text-lg font-medium hover:text-accent">Experience</a>
+                <a href="#projects" class="block text-lg font-medium hover:text-accent">Projects</a>
+                <a href="#contact" class="block text-lg font-medium text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <p class="text-accent font-mono text-sm mb-4 tracking-wider">HELLO, I'M</p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+                    Ahmed Mustapha<br>
+                    <span class="text-gradient">Hammouda</span>
+                </h1>
+                <div class="h-12 md:h-16 flex items-center justify-center">
+                    <span id="typing-text" class="text-xl md:text-3xl text-gray-400 font-light typing-cursor"></span>
+                </div>
+                
+                <p class="mt-8 text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Python Engineer & DevOps Specialist with 3+ years of experience architecting 
+                    robust backend systems and ensuring production reliability in critical environments.
+                </p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="px-8 py-4 bg-accent text-primary font-bold rounded-full hover:bg-accent-hover transition-all glow-hover flex items-center justify-center gap-2">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://hammoudamustaphaahmed.github.io/terminalwebsite/" target="_blank" class="px-8 py-4 glass text-white font-semibold rounded-full hover:bg-surface transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-terminal"></i>
+                        <span>Terminal Version</span>
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-accent">3+</div>
+                        <div class="text-sm text-gray-500 mt-1">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-accent">15+</div>
+                        <div class="text-sm text-gray-500 mt-1">Microservices</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-accent">99.9%</div>
+                        <div class="text-sm text-gray-500 mt-1">Uptime Achieved</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-accent">30%</div>
+                        <div class="text-sm text-gray-500 mt-1">Incident Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-accent text-xl"></i>
+        </div>
+    </section>
+
+<!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <p class="text-accent font-mono text-sm mb-2">ABOUT ME</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        Building <span class="text-gradient">Reliable Systems</span> That Scale
+                    </h2>
+                    <div class="space-y-4 text-gray-400 leading-relaxed">
+                        <p>
+                            I'm a passionate Python Engineer with a strong foundation in backend architecture 
+                            and DevOps practices. My journey began with a fascination for automation and 
+                            has evolved into expertise in designing microservices that handle critical 
+                            business operations.
+                        </p>
+                        <p>
+                            At <strong class="text-white">United Colors of Benetton</strong>, I led the 
+                            architecture of 15+ microservices, implementing CI/CD pipelines and monitoring 
+                            systems that reduced incident resolution time by 30%.
+                        </p>
+                        <p>
+                            Beyond engineering, I'm deeply passionate about <strong class="text-white">mathematical modeling</strong> 
+                            and explaining complex natural phenomena through equations. I create detailed PDF 
+                            publications exploring topics from chaos theory to electromagnetic physics, making 
+                            advanced mathematics accessible to all.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <span class="px-4 py-2 glass rounded-full text-sm text-accent border border-accent/20">
+                            <i class="fas fa-check-circle mr-2"></i>Problem Solver
+                        </span>
+                        <span class="px-4 py-2 glass rounded-full text-sm text-accent border border-accent/20">
+                            <i class="fas fa-check-circle mr-2"></i>Math Enthusiast
+                        </span>
+                        <span class="px-4 py-2 glass rounded-full text-sm text-accent border border-accent/20">
+                            <i class="fas fa-check-circle mr-2"></i>Continuous Learner
+                        </span>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" class="relative">
+                    <div class="relative z-10 glass rounded-2xl p-8 glow">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-4 bg-primary/50 rounded-xl">
+                                <i class="fas fa-server text-3xl text-accent mb-3"></i>
+                                <h3 class="font-bold text-white">Backend</h3>
+                                <p class="text-sm text-gray-500">FastAPI, Flask, SQLAlchemy</p>
+                            </div>
+                            <div class="text-center p-4 bg-primary/50 rounded-xl">
+                                <i class="fas fa-docker text-3xl text-accent mb-3"></i>
+                                <h3 class="font-bold text-white">DevOps</h3>
+                                <p class="text-sm text-gray-500">Docker, CI/CD, Nginx</p>
+                            </div>
+                            <div class="text-center p-4 bg-primary/50 rounded-xl">
+                                <i class="fas fa-database text-3xl text-accent mb-3"></i>
+                                <h3 class="font-bold text-white">Database</h3>
+                                <p class="text-sm text-gray-500">PostgreSQL, Optimization</p>
+                            </div>
+                            <div class="text-center p-4 bg-primary/50 rounded-xl">
+                                <i class="fas fa-square-root-alt text-3xl text-accent mb-3"></i>
+                                <h3 class="font-bold text-white">Mathematics</h3>
+                                <p class="text-sm text-gray-500">Modeling, Physics, Chaos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
+                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-accent font-mono text-sm mb-2">EXPERTISE</p>
+                <h2 class="text-4xl md:text-5xl font-bold">
+                    Technical <span class="text-gradient">Skills</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Python & Backend -->
+                <div class="glass rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fab fa-python text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Python & Backend</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>FastAPI & Pydantic v2</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Flask & SQLAlchemy</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>REST API Design</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Clean Code & Design Patterns</li>
+                    </ul>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Proficiency</span>
+                            <span class="text-accent">95%</span>
+                        </div>
+                        <div class="h-2 bg-surface rounded-full overflow-hidden">
+                            <div class="skill-bar h-full rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DevOps & Cloud -->
+                <div class="glass rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-cloud text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">DevOps & Cloud</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Docker & Docker Compose</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>GitLab CI/CD & Jenkins</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Azure Cloud Services</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Nginx & Reverse Proxy</li>
+                    </ul>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Proficiency</span>
+                            <span class="text-accent">90%</span>
+                        </div>
+                        <div class="h-2 bg-surface rounded-full overflow-hidden">
+                            <div class="skill-bar h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="glass rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-database text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Databases</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>PostgreSQL (Advanced)</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Query Optimization</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Indexing & Tuning</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>MySQL & CosmosDB</li>
+                    </ul>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Proficiency</span>
+                            <span class="text-accent">92%</span>
+                        </div>
+                        <div class="h-2 bg-surface rounded-full overflow-hidden">
+                            <div class="skill-bar h-full rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monitoring & SRE -->
+                <div class="glass rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Monitoring & SRE</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Grafana & Zabbix</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Real-time Alerting</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Log Management</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>SLA Management</li>
+                    </ul>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Proficiency</span>
+                            <span class="text-accent">88%</span>
+                        </div>
+                        <div class="h-2 bg-surface rounded-full overflow-hidden">
+                            <div class="skill-bar h-full rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- System Administration -->
+                <div class="glass rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-server text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">System Administration</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Linux Administration</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Active Directory</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>PowerShell & Bash</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>DNS, DHCP, TCP/IP</li>
+                    </ul>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Proficiency</span>
+                            <span class="text-accent">85%</span>
+                        </div>
+                        <div class="h-2 bg-surface rounded-full overflow-hidden">
+                            <div class="skill-bar h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security -->
+                <div class="glass rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Security</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Secure Authentication</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>XSS/CSRF Protection</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>SSL/TLS Certificates</li>
+                        <li><i class="fas fa-chevron-right text-accent mr-2 text-xs"></i>Role-based Access Control</li>
+                    </ul>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>Proficiency</span>
+                            <span class="text-accent">87%</span>
+                        </div>
+                        <div class="h-2 bg-surface rounded-full overflow-hidden">
+                            <div class="skill-bar h-full rounded-full" style="width: 87%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-accent font-mono text-sm mb-2">CAREER PATH</p>
+                <h2 class="text-4xl md:text-5xl font-bold">
+                    Professional <span class="text-gradient">Experience</span>
+                </h2>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-accent to-transparent"></div>
+                
+                <!-- Job 1 -->
+                <div class="relative mb-12" data-aos="fade-up">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 md:text-right pr-8">
+                            <span class="text-accent font-mono text-sm">March 2023 – Present</span>
+                            <h3 class="text-2xl font-bold mt-2">Tech Lead Python</h3>
+                            <p class="text-gray-400">United Colors of Benetton</p>
+                        </div>
+                        
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-primary glow"></div>
+                        
+                        <div class="md:w-5/12 md:pl-8 mt-4 md:mt-0">
+                            <div class="glass rounded-xl p-6 card-hover">
+                                <ul class="space-y-3 text-gray-400 text-sm">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span>Architected and maintained <strong class="text-white">15+ microservices</strong> (FastAPI/Flask) in critical production</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span>Implemented CI/CD pipelines reducing deployment time by <strong class="text-white">40%</strong></span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span>Reduced incident resolution time by <strong class="text-white">30%</strong> through automated monitoring</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                                        <span>PostgreSQL optimization achieving <strong class="text-white">50%</strong> faster query performance</span>
+                                    </li>
+                                </ul>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">FastAPI</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">Docker</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">PostgreSQL</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">CI/CD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job 2 - Updated -->
+<div class="relative" data-aos="fade-up" data-aos-delay="200">
+    <div class="md:flex items-center justify-between">
+        <div class="md:w-5/12 md:text-right pr-8 md:order-1 order-2">
+            <div class="glass rounded-xl p-6 card-hover">
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                        <span>Developed an <strong class="text-white">intelligent production tracking system</strong> based on Microsoft Azure Cloud</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                        <span>Implemented an <strong class="text-white">embedded system</strong> to improve operational efficiency, reduce errors through real-time alerts and push notifications, and optimize data collection in CosmosDB</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                        <span>Developed a <strong class="text-white">mobile application in Flutter</strong> connected to CosmosDB for visualizing performance indicators and enhancing decision-making</span>
+                    </li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded">Python</span>
+                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded">Azure</span>
+                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded">Flutter</span>
+                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded">CosmosDB</span>
+                    <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded">IoT</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-primary glow"></div>
+        
+        <div class="md:w-5/12 md:pl-8 md:order-2 order-1 mb-4 md:mb-0">
+            <span class="text-accent font-mono text-sm">Feb 2022 – June 2022</span>
+            <h3 class="text-2xl font-bold mt-2">Software Engineer</h3>
+            <p class="text-gray-400">Tunipack</p>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-24 bg-secondary/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <p class="text-accent font-mono text-sm mb-2">PORTFOLIO</p>
+            <h2 class="text-4xl md:text-5xl font-bold">
+                Featured <span class="text-gradient">Projects</span>
+            </h2>
+            <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
+                From AI-powered trading algorithms to enterprise management systems, 
+                building solutions that solve real-world problems.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project 1: Crypto Predictor -->
+            <div class="group relative overflow-hidden rounded-2xl glass card-hover" data-aos="fade-up">
+                <div class="h-56 bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-chart-line text-7xl text-orange-400/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full border border-orange-500/30">
+                            <i class="fas fa-brain mr-1"></i>AI/ML
+                        </span>
+                        <span class="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full border border-red-500/30">
+                            <i class="fas fa-fire mr-1"></i>Live
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold">Crypto Predictor Pro</h3>
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/Crypto_Predictor" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                        Real-time cryptocurrency price prediction platform using <strong class="text-white">Bidirectional LSTM neural networks</strong>. 
+                        Features technical analysis indicators (RSI, MACD, Bollinger Bands), market sentiment analysis via Fear & Greed Index, 
+                        and a smart trading strategy scanner with responsive Streamlit interface.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs rounded-full">TensorFlow</span>
+                        <span class="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs rounded-full">LSTM</span>
+                        <span class="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs rounded-full">Streamlit</span>
+                        <span class="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs rounded-full">Binance API</span>
+                        <span class="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs rounded-full">Pandas</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/Crypto_Predictor" target="_blank" class="flex-1 px-4 py-2 bg-orange-500/10 text-orange-400 rounded-lg hover:bg-orange-500/20 transition-all text-sm font-medium text-center">
+                            <i class="fas fa-code mr-2"></i>View Code
+                        </a>
+                        <button class="flex-1 px-4 py-2 glass text-gray-400 rounded-lg hover:text-white transition-all text-sm font-medium cursor-not-allowed opacity-50" title="Demo coming soon">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Invento GMAO -->
+            <div class="group relative overflow-hidden rounded-2xl glass card-hover" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-56 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-tools text-7xl text-blue-400/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full border border-blue-500/30">
+                            <i class="fas fa-building mr-1"></i>Enterprise
+                        </span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full border border-green-500/30">
+                            <i class="fas fa-check-circle mr-1"></i>Production
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold">Invento - GMAO System</h3>
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/Gestion-Projets-Invento" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                        Comprehensive <strong class="text-white">Computerized Maintenance Management System (GMAO)</strong> for enterprise asset tracking. 
+                        Features multi-role authentication (Admin, Manager, Technician, Consultant), real-time stock management with automated alerts, 
+                        project/task scheduling with calendar integration, and customizable KPI dashboards.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">Flask</span>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">SQLAlchemy</span>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">Chart.js</span>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">WTForms</span>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full">SQLite/PostgreSQL</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/Gestion-Projets-Invento" target="_blank" class="flex-1 px-4 py-2 bg-blue-500/10 text-blue-400 rounded-lg hover:bg-blue-500/20 transition-all text-sm font-medium text-center">
+                            <i class="fas fa-code mr-2"></i>View Code
+                        </a>
+                        <a href="https://gestion-projets-invento.onrender.com/" target="_blank" class="flex-1 px-4 py-2 bg-blue-500 text-primary font-semibold rounded-lg hover:bg-blue-400 transition-all text-sm font-medium text-center glow-hover">
+                            <i class="fas fa-rocket mr-2"></i>Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: OMH Travel Agency -->
+            <div class="group relative overflow-hidden rounded-2xl glass card-hover" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-56 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-plane-departure text-7xl text-emerald-400/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">
+                            <i class="fas fa-globe mr-1"></i>Travel
+                        </span>
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full border border-purple-500/30">
+                            <i class="fas fa-users mr-1"></i>CRM
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold">OMH Travel Agency</h3>
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/OMH-1" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                        Full-featured <strong class="text-white">travel agency management platform</strong> handling client relationships, trip bookings, 
+                        vehicle fleet management, and financial tracking. Includes expense management, departure scheduling, 
+                        and comprehensive reporting for tour operators.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full">Flask</span>
+                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full">MySQL</span>
+                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full">SQLAlchemy</span>
+                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full">Bootstrap</span>
+                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs rounded-full">jQuery</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/OMH-1" target="_blank" class="flex-1 px-4 py-2 bg-emerald-500/10 text-emerald-400 rounded-lg hover:bg-emerald-500/20 transition-all text-sm font-medium text-center">
+                            <i class="fas fa-code mr-2"></i>View Code
+                        </a>
+                        <button class="flex-1 px-4 py-2 glass text-gray-400 rounded-lg hover:text-white transition-all text-sm font-medium cursor-not-allowed opacity-50" title="Private deployment">
+                            <i class="fas fa-lock mr-2"></i>Private
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Numeris Invoice Generator -->
+            <div class="group relative overflow-hidden rounded-2xl glass card-hover" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-56 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-file-invoice-dollar text-7xl text-purple-400/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full border border-purple-500/30">
+                            <i class="fas fa-file-pdf mr-1"></i>PDF Gen
+                        </span>
+                        <span class="px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full border border-pink-500/30">
+                            <i class="fas fa-table mr-1"></i>Excel
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold">Numeris Invoice Generator</h3>
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/Numeris" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                        Modern <strong class="text-white">invoice generation platform</strong> that merges Excel data with PDF/image templates. 
+                        Features drag-and-drop text field positioning, live preview with actual data, customizable styling (fonts, colors), 
+                        and one-click PDF export. Perfect for businesses needing bulk invoice generation from spreadsheet data.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">Next.js 14</span>
+                        <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">TypeScript</span>
+                        <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">pdf-lib</span>
+                        <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">xlsx</span>
+                        <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full">Tailwind CSS</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/Numeris" target="_blank" class="flex-1 px-4 py-2 bg-purple-500/10 text-purple-400 rounded-lg hover:bg-purple-500/20 transition-all text-sm font-medium text-center">
+                            <i class="fas fa-code mr-2"></i>View Code
+                        </a>
+                        <button class="flex-1 px-4 py-2 glass text-gray-400 rounded-lg hover:text-white transition-all text-sm font-medium cursor-not-allowed opacity-50" title="Demo coming soon">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: TCHS Tennis Club -->
+            <div class="group relative overflow-hidden rounded-2xl glass card-hover md:col-span-2" data-aos="fade-up" data-aos-delay="400">
+                <div class="h-56 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-tennis-ball text-7xl text-yellow-400/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full border border-yellow-500/30">
+                            <i class="fas fa-calendar-check mr-1"></i>Scheduling
+                        </span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full border border-green-500/30">
+                            <i class="fas fa-credit-card mr-1"></i>Payments
+                        </span>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full border border-blue-500/30">
+                            <i class="fas fa-mobile-alt mr-1"></i>Responsive
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold">TCHS - Tennis Club Management System</h3>
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/TCHS" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4 leading-relaxed max-w-3xl">
+                        Complete <strong class="text-white">tennis club ecosystem</strong> managing members, coaches, subscriptions, and payments. 
+                        Features automated payment tracking with receipt generation, coach scheduling and availability management, 
+                        member portal with subscription status, financial reporting, and administrative dashboard. 
+                        Deployed on GitHub Pages with responsive design for mobile access by club members.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">Flask</span>
+                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">MySQL</span>
+                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">HTML5/CSS3</span>
+                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded-full">GitHub Pages</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed/TCHS" target="_blank" class="px-6 py-2 bg-yellow-500/10 text-yellow-400 rounded-lg hover:bg-yellow-500/20 transition-all text-sm font-medium">
+                            <i class="fas fa-code mr-2"></i>View Code
+                        </a>
+                        <a href="https://hammoudamustaphaahmed.github.io/TCHS/" target="_blank" class="px-6 py-2 bg-yellow-500 text-primary font-semibold rounded-lg hover:bg-yellow-400 transition-all text-sm font-medium glow-hover">
+                            <i class="fas fa-rocket mr-2"></i>Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center" data-aos="fade-up">
+            <a href="https://github.com/HAMMOUDAmustaphaahmed" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 glass rounded-full hover:bg-surface transition-all text-lg">
+                <i class="fab fa-github text-2xl"></i>
+                <span>View All Projects on GitHub</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!--  Mathematical Explorations -->
+<section id="mathematics" class="py-24 bg-gradient-to-b from-secondary/30 to-primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <p class="text-accent font-mono text-sm mb-2">BEYOND CODE</p>
+            <h2 class="text-4xl md:text-5xl font-bold">
+                Mathematical <span class="text-gradient">Explorations</span>
+            </h2>
+            <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
+                When I'm not architecting software systems, I explore the hidden mathematical poetry of the universe. 
+                I create detailed publications that decode natural phenomena through equations—making complex physics 
+                and mathematics accessible to curious minds.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- PDF 1: Quantum Physics & Time -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-atom text-2xl text-purple-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">When Consequence Precedes Cause</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Exploring quantum entanglement, delayed choice experiments, and the radical idea that the future might influence the present.
+                </p>
+                <a href="pdf/1761055695325.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 text-purple-400 rounded-lg hover:bg-purple-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 2: Algorithmic Selection -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-dna text-2xl text-red-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Artificial Selection: Darwin 2.0</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Analyzing how algorithms apply Darwinian principles to human behavior—are we choosing AI, or is AI choosing us?
+                </p>
+                <a href="pdf/1759489293052.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 rounded-lg hover:bg-red-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 3: Chaos & Networks -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-project-diagram text-2xl text-blue-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">From Chaos to Networks</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Unifying Verhulst's chaos equations with Euler's topology to reveal the mathematical architecture of viral trends and social networks.
+                </p>
+                <a href="pdf/1758100983580.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 text-blue-400 rounded-lg hover:bg-blue-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 4: Electromagnetic Universe -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-bolt text-2xl text-yellow-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">The Electromagnetic Universe</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    From Maxwell's four equations to your smartphone—unveiling how a 19th-century discovery unifies Wi-Fi, light, and quantum communication.
+                </p>
+                <a href="pdf/1756456716763.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 text-yellow-400 rounded-lg hover:bg-yellow-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 5: P vs NP -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-lock text-2xl text-green-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">P vs NP: The Mathematics of Impossible</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Decoding the million-dollar problem that governs cryptography, AI limits, and why some problems are fundamentally harder than others.
+                </p>
+                <a href="pdf/1752145698651.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 text-green-400 rounded-lg hover:bg-green-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 6: Zipf's Law -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="500">
+                <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-chart-bar text-2xl text-pink-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Zipf's Law: The Hidden Equation</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Discovering the mysterious power law that governs your Spotify playlist, city populations, and the 80/20 rule of wealth distribution.
+                </p>
+                <a href="pdf/1749571108217.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-pink-500/10 text-pink-400 rounded-lg hover:bg-pink-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 7: Secretary Problem -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="600">
+                <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-user-tie text-2xl text-indigo-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">The 37% Rule: Optimal Stopping</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    The mathematical strategy for making the best choice when you can't go back—applying the Secretary Problem to life's irreversible decisions.
+                </p>
+                <a href="pdf/1748878845151.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 text-indigo-400 rounded-lg hover:bg-indigo-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 8: Golden Ratio -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="700">
+                <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-spa text-2xl text-amber-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">The Golden Ratio: φ</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    From sunflower spirals to Da Vinci's art—exploring why 1.618... appears as the universal constant of beauty and efficiency in nature.
+                </p>
+                <a href="pdf/1753291049284.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 text-amber-400 rounded-lg hover:bg-amber-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+
+            <!-- PDF 9: Ancient Equations & AI -->
+            <div class="glass rounded-2xl p-6 card-hover group" data-aos="fade-up" data-aos-delay="800">
+                <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-brain text-2xl text-cyan-400"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Ancient Equations Sculpting AI</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    How Shannon's entropy and Ramanujan's infinite series structure modern deep learning—proving that past mathematics fuels future innovation.
+                </p>
+                <a href="pdf/1744706269862.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 rounded-lg hover:bg-cyan-500/20 transition-all text-sm font-medium">
+                    <i class="fas fa-eye"></i>
+                    <span>View Publication</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center" data-aos="fade-up">
+            <p class="text-gray-500 text-sm italic">
+                "Mathematics is the alphabet with which God has written the universe." — Galileo
+            </p>
+        </div>
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div data-aos="fade-right">
+                    <p class="text-accent font-mono text-sm mb-2">GET IN TOUCH</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        Let's Work <span class="text-gradient">Together</span>
+                    </h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        I'm currently open to new opportunities, particularly in Application Support, 
+                        DevOps, and Backend Engineering roles. Whether you have a question or just 
+                        want to say hi, I'll try my best to get back to you!
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Email</p>
+                                <a href="mailto:ahmedmustapha.hammouda@gmail.com" class="text-white hover:text-accent transition-colors">
+                                    ahmedmustapha.hammouda@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Location</p>
+                                <p class="text-white">Tunisia • Open to relocation (EU)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-passport text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Work Authorization</p>
+                                <p class="text-white">Talent Passport • EU Mobility Eligible</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex gap-4">
+                        <a href="https://linkedin.com/in/hammouda-ahmed-mustapha-a55270195/" target="_blank" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-accent hover:text-primary transition-all">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/HAMMOUDAmustaphaahmed" target="_blank" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-accent hover:text-primary transition-all">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-accent hover:text-primary transition-all">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <form class="glass rounded-2xl p-8" id="contact-form">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-primary/50 border border-surface rounded-xl focus:border-accent focus:outline-none transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 bg-primary/50 border border-surface rounded-xl focus:border-accent focus:outline-none transition-colors" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 bg-primary/50 border border-surface rounded-xl focus:border-accent focus:outline-none transition-colors" placeholder="Project Inquiry">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-primary/50 border border-surface rounded-xl focus:border-accent focus:outline-none transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-all glow-hover">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">
+                © 2024 Ahmed Mustapha Hammouda. All rights reserved.
+            </p>
+            <p class="text-gray-600 text-sm font-mono">
+                Designed & Built with <i class="fas fa-heart text-red-500 mx-1"></i> and lots of <i class="fas fa-coffee text-accent mx-1"></i>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Typing Effect
+        const phrases = [
+            "Python Engineer",
+            "DevOps Specialist", 
+            "Backend Architect",
+            "Problem Solver"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+        
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+        
+        // Start typing effect
+        type();
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('glass-strong', 'shadow-lg');
+            } else {
+                navbar.classList.remove('glass-strong', 'shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Form submission (prevent default for demo)
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
